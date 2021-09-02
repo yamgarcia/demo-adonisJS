@@ -20,20 +20,18 @@
 
 import Route from '@ioc:Adonis/Core/Route';
 
-// Route.get('/', async () => {
-//   return { hello: 'world!' }
-// })
+Route.get('/', async () => {
+  return { hello: 'world!' }
+})
 
-// Route.get('/posts/:postId', async ( { params, response, request } ) => {
-//   response.status(400);
-//   request.qs;
-//   return { hello: 'world!' +" "+ params.postId}
-// })
+Route.get('/posts/:postId', async ( { params, response, request } ) => {
+  response.status(400);
+  request.qs;
+  return { hello: 'world!' +" "+ params.postId}
+})
 
-// //Get /pets
-// Route.get('/pets', "PetsController.index");
+//Get /pets
+Route.get('/pets', "PetsController.index");
 
-Route.resource('owners', "OwnersController").apiOnly;
-
-Route.resource('owners.pets', "PetsController").apiOnly;
+Route.resource('/pets', "PetsController").apiOnly;
 
